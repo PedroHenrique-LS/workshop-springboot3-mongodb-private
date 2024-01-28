@@ -1,5 +1,6 @@
 package com.example.services;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -25,6 +26,10 @@ public class PostService {
 		} catch (NoSuchElementException e) {
 			throw new ObjectNotFoundException("Post não encontrado");
 		}
+	}
+	
+	public List<Post> findByTitle(String text) {
+		return postRepository.findByTitleContainingIgnoreCase(text);
 	}
 	
 
