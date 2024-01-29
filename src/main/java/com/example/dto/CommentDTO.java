@@ -1,19 +1,19 @@
 package com.example.dto;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 public class CommentDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	private String text;
-	private Instant data;
+	private LocalDateTime data;
 	private AuthorDTO author;
 	
 	public CommentDTO() {}
 
-	public CommentDTO(String text, Instant data, AuthorDTO author) {
+	public CommentDTO(String text, LocalDateTime data, AuthorDTO author) {
 		this.text = text;
 		this.data = data;
 		this.author = author;
@@ -27,11 +27,11 @@ public class CommentDTO implements Serializable {
 		this.text = text;
 	}
 
-	public Instant getData() {
+	public LocalDateTime getData() {
 		return data;
 	}
 
-	public void setData(Instant data) {
+	public void setData(LocalDateTime data) {
 		this.data = data;
 	}
 

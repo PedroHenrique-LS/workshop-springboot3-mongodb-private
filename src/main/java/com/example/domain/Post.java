@@ -1,7 +1,7 @@
 package com.example.domain;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -19,7 +19,7 @@ public class Post implements Serializable {
 	
 	@Id
 	private String id;
-	private Instant date;
+	private LocalDateTime date;
 	private String title;
 	private String body;
 	
@@ -29,7 +29,7 @@ public class Post implements Serializable {
 	
 	public Post() {}
 
-	public Post(String id, Instant date, String title, String body, AuthorDTO author) {
+	public Post(String id, LocalDateTime date, String title, String body, AuthorDTO author) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -46,11 +46,11 @@ public class Post implements Serializable {
 		this.id = id;
 	}
 
-	public Instant getDate() {
+	public LocalDateTime getDate() {
 		return date;
 	}
 
-	public void setDate(Instant date) {
+	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
 

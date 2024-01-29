@@ -1,5 +1,6 @@
 package com.example.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -29,7 +30,12 @@ public class PostService {
 	}
 	
 	public List<Post> findByTitle(String text) {
-		return postRepository.findByTitleContainingIgnoreCase(text);
+		return postRepository.searchTitle(text);
+	}
+	
+	public List<Post> fullSearch(String text, LocalDateTime minDate, LocalDateTime maxDate){
+		maxDate.plusSeconds(24 * 60 * 60);
+		return postRepository.fullSearch(text, minDate, maxDate);
 	}
 	
 
